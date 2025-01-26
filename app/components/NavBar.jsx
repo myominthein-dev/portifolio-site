@@ -35,6 +35,38 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
+  const scrollToSection = (sectionId) => {
+    const ele = document.getElementById(sectionId);
+    if(ele) {
+      ele.scrollIntoView({behavior : "smooth"})
+    }
+    setIsOpen(false)
+  }
+
+  useEffect(()=>{
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+    const sections = document.querySelectorAll('section')
+
+    sections.forEach(s => {
+      const sectionTop = s.offsetTop - 100
+      const sectionBottom = sectionTop + s.offsetHeight
+      const navLink = document.querySelector(`[href="#${s.id}"]`)
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        navLink?.classList.add("text-neutral-600")
+        navLink?.classList.remove("text-neutral-300")
+      } else {
+        navLink?.classList.remove("text-neutral-600")
+        navLink?.classList.add("text-neutral-300")
+      }
+    })
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  },[])
+
   return (
     <header className={`sticky z-50 shadow-md top-0 transition-all bg-black duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
@@ -49,12 +81,16 @@ const Navbar = () => {
             <ul className="flex space-x-4">
               {navItems.map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                  <a 
+                    href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
                     className="text-neutral-300 hover:text-neutral-600"
+                    onClick={(e) =>{
+                      e.preventDefault()
+                      scrollToSection(item.toLocaleLowerCase())
+                    }}
                   >
                     {item}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

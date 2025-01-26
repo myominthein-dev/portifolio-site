@@ -3,21 +3,19 @@ import { Spotlight } from "./components/ui/SpotLight";
 import { cn } from "@/lib/utils";
 import Navbar from "./components/NavBar";
 import Container from "./components/Container";
+import HeroSection from "./components/HeroSection";
+import ProjectSection from "./components/ProjectSection";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main>
-      
+    <main>  
       <Navbar/>
-      
-     
-      <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
-      
-      </div>
+      <HeroSection/>
+      <AboutSection/>
+      <ProjectSection/>
+      <ContactSection/>
     </main>
     
   );
