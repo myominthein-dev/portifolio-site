@@ -10,7 +10,7 @@ import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main>  
+    <main className="bg-neutral-900">  
       <Navbar/>
       <HeroSection/>
       <AboutSection/>
