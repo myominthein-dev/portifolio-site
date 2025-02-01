@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Ellipse from './Ellipse'
 import {motion, useInView, useAnimation} from 'framer-motion'
 import { TextGenerateEffect } from './ui/TextGenerate'
-import { itemVariants } from '@/lib/utils'
+import { itemVariants } from '@/lib/animations'
 
 const HeroSection = () => {
 
@@ -24,7 +24,7 @@ const HeroSection = () => {
            <Spotlight />
            <div className='flex justify-between mt-20 lg:px-48'>
             <div className='flex  justify-center flex-col gap-3  pr-20'>
-              <TextGenerateEffect  textClass={'text-3xl font-bold text-red-300'} words={`Hi, There! I'm Myo Min Thein`}/>
+              <TextGenerateEffect  textClass={'text-3xl font-bold text-neutral-300'} words={`Hi, There! I'm Myo Min Thein`}/>
 
               <TextGenerateEffect className={'my-1'} textClass={'text-2xl font-bold !text-blue-300'} words={`Web Developer`}/>
 
