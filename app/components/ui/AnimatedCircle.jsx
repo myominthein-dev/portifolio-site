@@ -51,9 +51,9 @@ export function CircularProgress({
         y="50%"
         dy=".3em"
         textAnchor="middle"
-        fontSize={`${size / 5}px`}
+        fontSize={`${size / 4}px`}
         fontWeight="bold"
-        fill="currentColor"
+        fill={progressColor}
       >
         {`${Math.round(progress)}%`}
       </text>
