@@ -83,7 +83,7 @@ const Navbar = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       } `}>
       
-        <Container>
+        <Container >
         <div className="flex items-center justify-between px-20 h-16">
           <Link href="/" className="text-xl font-bold text-neutral-300">
             

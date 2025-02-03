@@ -42,7 +42,7 @@ export default function PersonalInfoCard({ items }) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-sm font-medium text-gray-400 truncate">{item.label}</h4>
-                  <p className="text-[14px] text-gray-100 truncate">{item.value}</p>
+                  <p className="text-[14px] text-neutral-300 truncate">{item.value}</p>
                 </div>
               </motion.div>
             ))}

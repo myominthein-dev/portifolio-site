@@ -9,6 +9,7 @@ import ExperienceCard from './ExperienceCard'
 import { Card, CardContent } from '@/components/ui/card'
 import LearningCard from './LearningCard'
 import PersonalInfoCard from './InfoCard'
+import SectionHeader from './SectionHeader'
 
 const info = [
   {
@@ -20,23 +21,46 @@ const info = [
     value : "22"
   },
   {
+    label : 'Gender',
+    value : "Male"
+  },
+  {
+    label : 'Marital Status',
+    value : "Single"
+  },
+  {
+    label : 'Nationality',
+    value : "Myanmar"
+  },
+  {
     label : 'Address',
     value : 'Mingaladon, Yangon (current - Taungoo)'
   },
   {
-    label : 'Spoken Language',
+    label : 'Phone',
+    value : '09 451 819 025'
+  },
+  {
+    label : 'Email',
+    value : 'myomin9916@gmail.com'
+  },
+  {
+    label : 'Spoken Languages',
     value : "Burmese (Native) / English (Intermediate)"
+  },
+  {
+    label : 'Education',
+    value : "First year of Economics of YUDE (paused)"
   }
 
 
 ]
 const AboutSection = () => {
   return (
-    <section className='min-h-screen' id='about'>
+    <section className='min-h-screen  3xl:min-h-[800px]' id='about'>
       <Container>
           <div className='lg:px-20'> 
-            <h2 className='text-center text-neutral-300 text-3xl mb-10 font-bold'>About Me</h2>
-
+            <SectionHeader>About Me</SectionHeader>
             <div>
             <Tabs defaultValue='experience' className='grid grid-cols-3'>
             <TabsList className='flex flex-col   gap-3 col-span-1'>
@@ -50,7 +74,7 @@ const AboutSection = () => {
             <TabsContent value='experience'>
               <div className='px-5'>
               <h3 className='text-2xl text-blue-400 '>Experience</h3>
-              <ScrollArea className="h-[80vh] w-full  rounded-md  p-4">
+              <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                 <ExperienceCard fromYear={'2023'} toYear={'2024'} title={"Sale Operations (Sale, Merchandising, Inventory)"} company={'Sein Hinn Electronics Show Room'} knowledge={['Communication skill improvement','POS system end-using','Product flow']} />
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -116,16 +140,16 @@ const AboutSection = () => {
               <div className='px-5'>
               <h3 className='text-2xl text-blue-400'>Skills</h3>
                
-               <ScrollArea className="h-[80vh] w-full  rounded-md  p-4">
+               <ScrollArea className="h-[600px]  w-full  rounded-md  p-4">
                 <SkillShowcase/>
                </ScrollArea>
               </div>
             </TabsContent>
             <TabsContent value='learning'>
             <div className='px-5'>
-              <h3 className='text-2xl  text-blue-400'>Learning Journey</h3>
+              <h3 className='text-2xl  text-blue-300'>Learning Journey</h3>
                
-               <ScrollArea className="h-[80vh] w-full  rounded-md  p-4">
+               <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
 
                   <div className='flex flex-col gap-5'>
                   <LearningCard title={'Built Web Foundations from online sources'} />
@@ -141,7 +165,7 @@ const AboutSection = () => {
             <div className='px-5'>
               <h3 className='text-2xl text-blue-400 '>Personal Info</h3>
                
-               <ScrollArea className="h-[80vh] w-full  rounded-md  p-4">
+               <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                   <PersonalInfoCard items={info} />
                </ScrollArea>
               </div>
