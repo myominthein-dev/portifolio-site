@@ -1,15 +1,16 @@
 "use client";
-import React from "react";
+import React,{useRef} from "react";
 import Container from "./Container";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SkillShowcase } from "./SkillShowcase";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Card, CardContent } from "@/components/ui/card";
 import LearningCard from "./LearningCard";
 import PersonalInfoCard from "./InfoCard";
 import SectionHeader from "./SectionHeader";
+import { itemVariants } from "@/lib/animations";
 
 const info = [
   {
@@ -54,6 +55,14 @@ const info = [
   },
 ];
 const AboutSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref,{once : true, amount : 0.4})
+  const controls = useAnimation();
+
+  if (isInView) {
+    controls.start('visible');
+  }
+
   return (
     <section className="xl:min-h-screen   3xl:min-h-[800px] mb-24" id="about">
       <Container>
@@ -62,16 +71,24 @@ const AboutSection = () => {
           <div>
             <Tabs defaultValue="experience" className="md:grid grid-cols-3">
               <TabsList className="flex flex-col    gap-3 md:col-span-1">
+                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
                 <TabsTrigger value="experience">Experience</TabsTrigger>
+                </motion.span>
+                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
                 <TabsTrigger value="skill">Skills</TabsTrigger>
+                </motion.span>
+                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
                 <TabsTrigger value="learning">Learning Journey</TabsTrigger>
+                </motion.span>
+                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
                 <TabsTrigger value="personal">Personal Info</TabsTrigger>
+                </motion.span>
               </TabsList>
 
               <div className=" md:col-span-2 font-semibold text-neutral-300">
                 <TabsContent value="experience">
                   <div className="px-5">
-                    <h3 className="text-2xl text-blue-400 ">Experience</h3>
+                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 ">Experience</motion.h3>
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <ExperienceCard
                         fromYear={"2023"}
@@ -157,7 +174,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="skill">
                   <div className="px-5">
-                    <h3 className="text-2xl text-blue-400">Skills</h3>
+                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400">Skills</motion.h3>
 
                     <ScrollArea className="h-[600px]  w-full  rounded-md  p-4">
                       <SkillShowcase />
@@ -166,9 +183,9 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="learning">
                   <div className="px-5">
-                    <h3 className="text-2xl  text-blue-300">
+                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl  text-blue-300">
                       Learning Journey
-                    </h3>
+                    </motion.h3>
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <div className="flex flex-col gap-5">
@@ -213,7 +230,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="personal">
                   <div className="px-5">
-                    <h3 className="text-2xl text-blue-400 ">Personal Info</h3>
+                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 ">Personal Info</motion.h3>
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <PersonalInfoCard items={info} />

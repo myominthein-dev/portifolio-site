@@ -25,7 +25,7 @@ const projects = [
     image : estatela,
     technologies : [...techIcons,<SiFramer className='text-white size-6' />],
     previewLink : "https://estatela-mcf3.netlify.app",
-    githubLink : "#"
+    githubLink : "https://github.com/myominthein-dev/realEstate-project-mcf-3"
   },
   {
     id : 2,
@@ -35,7 +35,7 @@ const projects = [
     image : kidGarden,
     technologies : [...techIcons,<SiFramer className='text-white size-6' />],
     previewLink : "https://tinyverse-mcf3.netlify.app/",
-    githubLink : "#"
+    githubLink : "https://github.com/myominthein-dev/kid-garden-mcf3"
   },
   {
     id : 3,
@@ -45,7 +45,7 @@ const projects = [
     image : illustration,
     technologies : [...techIcons,<SiFramer className='text-white size-6' />],
     previewLink : "https://3d-illustration-mcf3.vercel.app",
-    githubLink : "#"
+    githubLink : "https://github.com/myominthein-dev/test-project-1"
   },
   {
     id : 4,
@@ -55,7 +55,7 @@ const projects = [
     image : ecommerce,
     technologies : techIcons,
     previewLink : "https://react-ecommerce-app-vincent.vercel.app",
-    githubLink : "#"
+    githubLink : "https://github.com/myominthein-dev/react-ecommerce-app"
   }
 
 ]

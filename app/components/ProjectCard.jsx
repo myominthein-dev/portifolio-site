@@ -89,6 +89,7 @@ const ProjectCard = ({
               Preview
             </motion.a>
             <motion.a 
+              target='__blank'
               href={githubLink}
               variants={itemVariants} 
               className='text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300'
