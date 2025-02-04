@@ -11,6 +11,7 @@ import LearningCard from "./LearningCard";
 import PersonalInfoCard from "./InfoCard";
 import SectionHeader from "./SectionHeader";
 import { itemVariants } from "@/lib/animations";
+import SubAboutTitle from "./SubAboutTitle";
 
 const info = [
   {
@@ -56,7 +57,7 @@ const info = [
 ];
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref,{once : true, amount : 0.4})
+  const isInView = useInView(ref,{once : true, amount : 0.5})
   const controls = useAnimation();
 
   if (isInView) {
@@ -88,7 +89,7 @@ const AboutSection = () => {
               <div className=" md:col-span-2 font-semibold text-neutral-300">
                 <TabsContent value="experience">
                   <div className="px-5">
-                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 ">Experience</motion.h3>
+                    <SubAboutTitle title={'Experience'} />
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <ExperienceCard
                         fromYear={"2023"}
@@ -149,14 +150,14 @@ const AboutSection = () => {
                                   />
                                 </motion.div>
                               </div>
-                              <div className="flex-1">
+                              <motion.div ref={ref} animate={controls} initial="hidden" variants={itemVariants} className="flex-1">
                                 <span className="text-sm font-medium text-blue-400">
                                   2025
                                 </span>
                                 <h3 className="text-sm lg:text-lg font-semibold text-gray-200">
                                   Seeking Opportunities in IT Firms
                                 </h3>
-                              </div>
+                              </motion.div>
                             </div>
                             <div className="space-y-2 ml-10">
                               <h4 className="text-xs lg:text-sm font-medium text-gray-400">
@@ -174,8 +175,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="skill">
                   <div className="px-5">
-                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400">Skills</motion.h3>
-
+                    <SubAboutTitle title={'Skill'} />
                     <ScrollArea className="h-[600px]  w-full  rounded-md  p-4">
                       <SkillShowcase />
                     </ScrollArea>
@@ -183,9 +183,8 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="learning">
                   <div className="px-5">
-                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl  text-blue-300">
-                      Learning Journey
-                    </motion.h3>
+                  <SubAboutTitle title={'Learning Journey'} />
+
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <div className="flex flex-col gap-5">
@@ -230,7 +229,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="personal">
                   <div className="px-5">
-                    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 ">Personal Info</motion.h3>
+                  <SubAboutTitle title={'Personal Info'} />
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <PersonalInfoCard items={info} />

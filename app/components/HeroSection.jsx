@@ -26,8 +26,12 @@ const HeroSection = () => {
            <Spotlight />
            
            <div className='flex   justify-between mt-20 lg:px-10 xl:px-48'>
-            <div className='flex  text-left sm:text-center lg:text-start min-h-[500px] sm:px-24 lg:px-0 relative justify-center flex-col gap-3  lg:pr-20'>
-            <motion.div className=' absolute z-10 w-[340px] mx-auto left-0 right-0  lg:hidden' initial='hidden' ref={ref} animate={controls} variants={itemVariants} >
+            <div className='flex min-h-screen  text-left sm:text-center lg:text-start sm:min-h-[500px] sm:px-16 lg:px-0 relative justify-center flex-col gap-6 sm:gap-3 pb-24 sm:pb-0  lg:pr-20'>
+            <motion.div className=' absolute z-10 w-[340px] mx-auto left-0 right-0  lg:hidden' initial={{ y : 30, opacity : 0 }}
+                  animate={{ y : 0, opacity : 1 }}
+                  transition={{ duration: 0.5,type: 'spring', once : true,
+                    stiffness: 100,
+                    delay : 0.5, }} >
             <Ellipse
             initial="40% 60% 70% 40% / 30% 70% 60% 30% "
             bgColor='bg-transparent'
@@ -39,15 +43,24 @@ const HeroSection = () => {
 
             </Ellipse>
             </motion.div>
-              <TextGenerateEffect  textClass={'text-[26px]  sm:text-3xl relative z-30 font-bold text-neutral-300'} words={`Hi, There! I'm Myo Min Thein`}/>
-
+              <TextGenerateEffect  textClass={'text-4xl hidden sm:inline relative z-30 font-bold text-neutral-300'} words={`Hi, There! I'm Myo Min Thein`}/>
+              <TextGenerateEffect  textClass={'text-4xl sm:hidden relative z-30 font-bold text-neutral-300'} words={`Hi, There!`}/>
+              <TextGenerateEffect  textClass={'text-4xl  sm:hidden relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
               <TextGenerateEffect  textClass={'text-xs sm:text-sm z-30 relative font-thin text-neutral-100 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
 
               <div className='flex z-30 relative  sm:justify-center lg:justify-start gap-3 mt-3'>
-                <motion.a href='#projects' ref={ref} initial='hidden' animate={controls} variants={itemVariants} className='text-sm cursor-pointer font-semibold bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300'>Explore projects</motion.a>
-                <motion.button ref={ref} initial='hidden' animate={controls} variants={itemVariants} className='text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300'>Download CV</motion.button>
+                <motion.a href='#projects' initial={{ y : 40, opacity : 0 }}
+                  animate={{ y : 0, opacity : 1 }}
+                  transition={{ duration: 0.1,type: 'spring', once : true,
+                    stiffness: 100,
+                    }} className='text-sm cursor-pointer font-semibold bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300'>Explore projects</motion.a>
+                <motion.button initial={{ y : 40, opacity : 0 }}
+                  animate={{ y : 0, opacity : 1 }}
+                  transition={{ duration: 0.2,type: 'spring', once : true,
+                    stiffness: 100,
+                    delay : 0.1, }}  className='text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300'>Download CV</motion.button>
               </div>
             </div>
              

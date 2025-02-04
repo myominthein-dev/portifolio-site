@@ -1,10 +1,20 @@
-import { motion } from "framer-motion"
+'use client'
+import { useRef } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
+import { itemVariants } from "@/lib/animations"
 
 
 export default function ExperienceCard({ fromYear,toYear, title, company, knowledge }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref,{once : true, amount : 0.4})
+  const controls = useAnimation()
+
+  if (isInView) {
+    controls.start('visible')
+  }
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <motion.div initial='hidden' ref={ref} animate={controls} variants={itemVariants}>
       <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-lg mb-5">
         <CardContent className="p-6 space-y-4">
           <div className="flex items-center gap-4">

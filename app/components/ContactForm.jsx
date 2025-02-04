@@ -1,14 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect ,useRef} from "react"
 import { useForm } from "react-hook-form"
 import emailjs from "@emailjs/browser"
-import { motion } from "framer-motion"
+import { motion, useInView,useAnimation } from "framer-motion"
+import { userAgent } from "next/server"
+import { itemVariants } from "@/lib/animations"
 
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const ref = useRef(null)
+  const isInView = useInView(ref,{once : true , amount : 0.4})
+  const controls = useAnimation();
 
+  if (isInView) {
+    controls.start('visible');
+  }
   const {
     register,
     handleSubmit,
@@ -43,10 +51,8 @@ export default function ContactSection() {
   }
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+    <motion.section ref={ref} animate={controls} variants={itemVariants} initial='hidden'
+     
       className="  sm:px-6 lg:px-8  flex items-center"
     >
       <div className="max-w-xl border border-blue-300 rounded-lg py-9 px-6 mx-auto w-full">
