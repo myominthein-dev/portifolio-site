@@ -7,15 +7,17 @@ import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-neutral-900">  
+    <main className="bg-slate-950 relative overflow-x-hidden">  
       <Navbar/>
       <HeroSection/>
       <AboutSection/>
       <ProjectSection/>
       <ContactSection/>
+      <Footer/>
     </main>
     
   );

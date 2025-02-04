@@ -38,16 +38,16 @@ const ProjectCard = ({
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
       }}
-      className='grid grid-cols-1 min-h-[340px]  md:grid-cols-2 gap-6 bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700'
+      className='grid grid-cols-1 h-full  md:grid-cols-2 gap-6 bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700'
     >
-      <div className='flex flex-col justify-between p-4'>
+      <div className='flex flex-col justify-between  p-4 '>
         <div>
           <h3 className='text-blue-400 tracking-widest text-xl font-semibold mb-2'>{number}.</h3>
-          <h3 className='text-gray-100 text-3xl font-bold mb-2'>{title}</h3>
+          <h3 className='text-gray-100 lg:text-2xl xl:text-3xl font-bold mb-2'>{title}</h3>
           <h5 className='text-gray-400 text-sm font-semibold mb-4'>{subtitle}</h5>
         </div>
 
-        <p className='text-gray-300 text-sm mb-2 mt-1'>{description} <button className='text-blue-400 font-semibold '>More Details</button></p>
+        <p className='text-gray-300  text-sm mb-2 mt-1'> <span className='lg:line-clamp-3 xl:line-clamp-4'>{description}</span> <button className='text-blue-400 font-semibold '>More Details</button></p>
 
         <div className='space-y-4'>
           <div className='flex gap-3'>
@@ -81,6 +81,7 @@ const ProjectCard = ({
 
           <div className='flex gap-3'>
             <motion.a 
+              target='__blank'
               href={previewLink} 
               variants={itemVariants} 
               className='text-sm cursor-pointer font-semibold bg-blue-600 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300'

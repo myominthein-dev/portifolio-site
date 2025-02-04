@@ -13,7 +13,6 @@ const techIcons = [
   <FaHtml5 className='text-red-500 size-6' />,
   <FaReact className='text-sky-500 size-6' />,
   <SiTailwindcss className='text-blue-400 size-6' />,
-  <SiFramer className='text-white size-6' />
 ]
 
 
@@ -24,8 +23,8 @@ const projects = [
     subtitle : "Front-End project",
     description : "This is about of a static real-estate page and group-project of MMS Connection program.",
     image : estatela,
-    technologies : techIcons,
-    previewLink : "#",
+    technologies : [...techIcons,<SiFramer className='text-white size-6' />],
+    previewLink : "https://estatela-mcf3.netlify.app",
     githubLink : "#"
   },
   {
@@ -34,8 +33,8 @@ const projects = [
     subtitle : "Front-End project",
     description : "This is about of a pre-school profile page and group-project of MMS Connection program.",
     image : kidGarden,
-    technologies : techIcons,
-    previewLink : "#",
+    technologies : [...techIcons,<SiFramer className='text-white size-6' />],
+    previewLink : "https://tinyverse-mcf3.netlify.app/",
     githubLink : "#"
   },
   {
@@ -44,8 +43,8 @@ const projects = [
     subtitle : "Front-End project",
     description : "This is first project of our team for collaboration-improvement, practicing layout and animations.",
     image : illustration,
-    technologies : techIcons,
-    previewLink : "#",
+    technologies : [...techIcons,<SiFramer className='text-white size-6' />],
+    previewLink : "https://3d-illustration-mcf3.vercel.app",
     githubLink : "#"
   },
   {
@@ -55,7 +54,7 @@ const projects = [
     description : "This project is for practicing JS DOM manipulations and user-interactions.",
     image : ecommerce,
     technologies : techIcons,
-    previewLink : "#",
+    previewLink : "https://react-ecommerce-app-vincent.vercel.app",
     githubLink : "#"
   }
 
@@ -63,11 +62,11 @@ const projects = [
 
 const ProjectSection = () => {
   return (
-    <section id='projects' className='min-h-screen  3xl:min-h-[800px] '>
+    <section id='projects' className='xl:min-h-screen   3xl:min-h-[800px] mb-24 '>
         <Container>
-          <div className='lg:px-20'>
+          <div className='lg:px-10 xl:px-20'>
             <SectionHeader>Projects</SectionHeader>
-            <div className='grid mt-5  grid-cols-2 gap-4'>
+            <div className='grid mt-5 grid-cols-1 lg:grid-cols-2 gap-4'>
             
               {
                 projects.map(({id,title,subtitle,description,image,technologies,previewLink,githubLink}) => { 

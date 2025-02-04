@@ -46,13 +46,13 @@ export default function ExperienceCard({ fromYear,toYear, title, company, knowle
               </motion.div>
             </div>
             <div className="flex-1">
-              <span className="text-sm font-medium text-blue-400">{fromYear} - {toYear}</span>
-              <h3 className="text-lg font-semibold text-gray-200">{title}</h3>
+              <span className="text-xs lg:text-sm font-medium text-blue-400">{fromYear} - {toYear}</span>
+              <h3 className=" text-sm  lg:text-lg font-semibold text-gray-200">{title}</h3>
             </div>
           </div>
           <div className="space-y-2 ml-10">
-            <h4 className="text-sm font-medium text-gray-400">Company:</h4>
-            <p className="text-base text-gray-200">{company}</p>
+            <h4 className="text-xs lg:text-sm font-medium text-gray-400">Company:</h4>
+            <p className="text-sm lg:text-lg text-gray-200">{company}</p>
           </div>
           <div className="space-y-2 ml-10">
             <h4 className="text-sm font-medium text-gray-400">Knowledge:</h4>
@@ -92,7 +92,7 @@ export default function ExperienceCard({ fromYear,toYear, title, company, knowle
                       </svg>
                     </div>
                   </div>
-                  <p className="text-sm text-gray-300">{item}</p>
+                  <p className="text-xs lg:text-sm text-gray-300">{item}</p>
                 </motion.li>
               ))}
             </ul>

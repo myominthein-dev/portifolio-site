@@ -47,7 +47,7 @@ const LearningCard = ({title,skills = []}) => {
               />
             </motion.div>
           </div>
-          <h3 className="text-lg font-semibold text-gray-100">
+          <h3 className="text-sm lg:text-lg font-semibold text-gray-100">
             {title}
           </h3>
         </div>

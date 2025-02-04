@@ -6,7 +6,7 @@ const Ellipse = ({
   initial,
   isAnimate = true,
   shadow,
-  
+  bgColor = 'bg-slate-800',
   width = "340px",
   height = "430px",
   children,
@@ -49,7 +49,7 @@ const Ellipse = ({
         justifyContent: "center",
         alignItems: "center",
       }}
-      className={`${shadow ? "shadow-2xl" : ""} bg-slate-800 border border-slate-400 overflow-hidden relative`}
+      className={`${shadow ? "shadow-2xl" : ""} ${bgColor}  border border-slate-400 overflow-hidden relative`}
       
       animate={animate}
       transition={transition}

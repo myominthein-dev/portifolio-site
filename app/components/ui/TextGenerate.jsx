@@ -4,6 +4,7 @@ import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
+  paraPadding = '',
   words,
   className,
   filter = true,
@@ -24,7 +25,7 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      (<motion.div ref={scope}>
+      (<motion.div className={`${paraPadding}`} ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
             (<motion.span

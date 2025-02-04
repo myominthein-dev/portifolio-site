@@ -47,9 +47,9 @@ export default function ContactSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className=" px-4 sm:px-6 lg:px-8  flex items-center"
+      className="  sm:px-6 lg:px-8  flex items-center"
     >
-      <div className="max-w-xl border border-blue-300 rounded-lg px-4 py-5 mx-auto w-full">
+      <div className="max-w-xl border border-blue-300 rounded-lg py-9 px-6 mx-auto w-full">
         
         <motion.form
           initial={{ opacity: 0, y: 20 }}
