@@ -48,7 +48,7 @@ const HeroSection = () => {
               <TextGenerateEffect  textClass={'text-4xl  sm:hidden relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
-              <TextGenerateEffect  textClass={'text-sm z-30 relative  text-gray-50 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
+              <TextGenerateEffect  textClass={'text-xs sm:text-sm sm:font-thin z-30 relative  text-gray-100 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
 
               <div className='flex z-30 relative  sm:justify-center lg:justify-start gap-3 mt-3'>
                 <motion.a href='#projects' initial={{ y : 40, opacity : 0 }}
