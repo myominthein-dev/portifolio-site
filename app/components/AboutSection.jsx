@@ -81,10 +81,10 @@ const AboutSection = () => {
           <SectionHeader>About Me</SectionHeader>
           <div>
             <Tabs defaultValue="experience" className="md:grid grid-cols-3">
-            <motion.div initial="hidden" animate={controls} variants={containerVariants}>
+            <motion.div className="mb-10 sm:mb-0" initial="hidden" animate={controls} variants={containerVariants}>
                 <TabsList className="flex flex-col gap-3 md:col-span-1">
                   {tabData.map((tab, index) => (
-                    <motion.div key={index} className="w-full" variants={tabVariants}>
+                    <motion.div key={index} className="w-full font-poppin" variants={tabVariants}>
                       <TabsTrigger value={tab.value}>{tab.label}</TabsTrigger>
                     </motion.div>
                   ))}
@@ -111,78 +111,7 @@ const AboutSection = () => {
                         ]}
                       />
 
-                      <motion.div
-                       
-                        animate={controls}
-                        initial="hidden"
-                        variants={itemVariants}
-                      >
-                        <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-lg mb-5">
-                          <CardContent className="p-6 space-y-4">
-                            <div className="flex items-center gap-4">
-                              <div className="relative">
-                                <motion.div
-                                  className="absolute inset-0 bg-blue-500 rounded-full opacity-50"
-                                  animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.3, 0.5, 0.3],
-                                  }}
-                                  transition={{
-                                    duration: 2,
-                                    repeat: Number.POSITIVE_INFINITY,
-                                    ease: "easeInOut",
-                                  }}
-                                />
-                                <motion.div
-                                  className="relative z-10 size-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-lg"
-                                  animate={{
-                                    scale: [1, 0.9, 1],
-                                  }}
-                                  transition={{
-                                    duration: 2,
-                                    repeat: Number.POSITIVE_INFINITY,
-                                    ease: "easeInOut",
-                                  }}
-                                >
-                                  <motion.div
-                                    className="absolute inset-1 bg-purple-300 rounded-full opacity-30"
-                                    animate={{
-                                      scale: [1, 0.8, 1],
-                                    }}
-                                    transition={{
-                                      duration: 2,
-                                      repeat: Number.POSITIVE_INFINITY,
-                                      ease: "easeInOut",
-                                    }}
-                                  />
-                                </motion.div>
-                              </div>
-                              <motion.div
-                               
-                                animate={controls}
-                                initial="hidden"
-                                variants={itemVariants}
-                                className="flex-1"
-                              >
-                                <span className="text-sm font-medium text-blue-400">
-                                  2025
-                                </span>
-                                <h3 className="text-sm lg:text-lg font-semibold text-gray-200">
-                                  Seeking Opportunities in IT Firms
-                                </h3>
-                              </motion.div>
-                            </div>
-                            <div className="space-y-2 ml-10">
-                              <h4 className="text-xs lg:text-sm font-medium text-gray-400">
-                                Position :{" "}
-                              </h4>
-                              <p className="text-sm lg:text-lg text-gray-200">
-                                Front-End Developer, Full-Stack Developer
-                              </p>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </motion.div>
+                      <ExperienceCard checked={false} />
                     </ScrollArea>
                   </div>
                 </TabsContent>

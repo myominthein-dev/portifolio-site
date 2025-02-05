@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FaCss3, FaHtml5, FaReact } from 'react-icons/fa'
 import { SiFramer, SiTails, SiTailwindcss } from 'react-icons/si'
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { itemVariants } from '@/lib/animations'
+import { btnVariants, itemVariants } from '@/lib/animations'
 
 
 const ProjectCard = ({
@@ -29,6 +29,9 @@ const ProjectCard = ({
 
   
 
+  
+
+
   return (
     <motion.div 
       ref={ref}
@@ -41,13 +44,13 @@ const ProjectCard = ({
       className='grid grid-cols-1 h-full  md:grid-cols-2 gap-6 bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700'
     >
       <div className='flex flex-col justify-between  p-4 '>
-        <div>
-          <h3 className='text-blue-400 tracking-widest text-xl font-semibold mb-2'>{number}.</h3>
-          <h3 className='text-gray-100 lg:text-2xl xl:text-3xl font-bold mb-2'>{title}</h3>
-          <h5 className='text-gray-400 text-sm font-semibold mb-4'>{subtitle}</h5>
+        <div className='font-roboto'>
+          <motion.h4 variants={itemVariants} className='text-blue-400 tracking-widest text-xl font-semibold mb-2'>{number}.</motion.h4>
+          <motion.h2 variants={itemVariants} className='text-gray-100 lg:text-2xl xl:text-3xl font-bold mb-2'>{title}</motion.h2>
+          <motion.h5 variants={itemVariants} className='text-gray-400 text-sm font-semibold mb-4'>{subtitle}</motion.h5>
         </div>
 
-        <p className='text-gray-300  text-sm mb-2 mt-1'> <span className='lg:line-clamp-3 xl:line-clamp-4'>{description}</span> <button className='text-blue-400 font-semibold '>More Details</button></p>
+        <motion.p variants={btnVariants} className='text-gray-300 font-sans  text-sm mb-2 mt-1'> <span className='lg:line-clamp-3 xl:line-clamp-4'>{description}</span> <button className='text-blue-400 font-semibold '>More Details</button></motion.p>
 
         <div className='space-y-4'>
           <div className='flex gap-3'>

@@ -66,7 +66,7 @@ const ProjectSection = () => {
         <Container>
           <div className='lg:px-10 xl:px-20'>
             <SectionHeader>Projects</SectionHeader>
-            <div className='grid mt-5 grid-cols-1 lg:grid-cols-2 gap-4'>
+            <div className='grid mt-5 grid-cols-1 lg:grid-cols-2 gap-5'>
             
               {
                 projects.map(({id,title,subtitle,description,image,technologies,previewLink,githubLink}) => { 

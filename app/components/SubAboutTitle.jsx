@@ -12,7 +12,7 @@ const SubAboutTitle = ({title}) => {
     controls.start('visible')
   }
   return (
-    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 ">{title}</motion.h3>
+    <motion.h3 ref={ref} animate={controls} initial='hidden' variants={itemVariants} className="text-2xl text-blue-400 font-roboto">{title}</motion.h3>
 
   )
 }

@@ -12,7 +12,7 @@ const SectionHeader = ({children}) => {
     controls.start('visible')
   }
   return (
-    <motion.div ref={ref} animate={controls} initial="hidden" variants={itemVariants} className='text-center text-neutral-300 text-3xl mb-20 font-bold'>{children}</motion.div>
+    <motion.div ref={ref} animate={controls} initial="hidden" variants={itemVariants} className='text-center font-serif text-neutral-300 text-4xl mb-20 font-bold'>{children}</motion.div>
 
   )
 }

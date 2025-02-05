@@ -98,7 +98,7 @@ const Navbar = () => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className={`fixed w-full z-50 shadow-md top-0 transition-transform duration-300 ease-in-out ${
+      className={`fixed w-full font-serif z-50 shadow-md top-0 transition-transform duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

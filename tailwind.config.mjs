@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			poppin: ["Poppins", "sans-serif"],
+			roboto: ["Roboto", "sans-serif"],
+			pacifico: ["Pacifico", "sans-serif"],
+		  },
 		screens : {
 			'3xl' : '1600px',
 			'4xl' : '1800px'

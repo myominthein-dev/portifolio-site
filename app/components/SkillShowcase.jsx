@@ -120,7 +120,9 @@ export function SkillShowcase() {
           <Card className="overflow-hidden border h-full border-gray-700 bg-gray-800 shadow-lg">
             <CardContent className="p-4">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-100">{skill.name}</h3>
+                <motion.h3 initial={{ y : 30, opacity : 0 }}
+                  animate={{ y : 0, opacity : 1 }}
+                  transition={{ duration: 0.5, once : true, ease: "linear" }} className="text-lg font-semibold font-poppin text-gray-100">{skill.name}</motion.h3>
                 <motion.div
                   initial={{ y : 30, opacity : 0 }}
                   animate={{ y : 0, opacity : 1 }}
@@ -172,7 +174,7 @@ export function SkillShowcase() {
                       </svg>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-300 line-clamp-2">{d}</p>
+                    <p className="text-xs font-sans text-gray-300 line-clamp-2">{d}</p>
                   </motion.div>
                 ))}
               </div>

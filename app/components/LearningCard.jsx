@@ -47,9 +47,11 @@ const LearningCard = ({title,skills = []}) => {
               />
             </motion.div>
           </div>
-          <h3 className="text-sm lg:text-lg font-semibold text-gray-100">
+          <motion.h3 initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }} className="text-sm font-roboto lg:text-lg font-semibold text-gray-100">
             {title}
-          </h3>
+          </motion.h3>
         </div>
         {
             skills.length > 0 && (
