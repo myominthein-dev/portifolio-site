@@ -1,5 +1,5 @@
 "use client";
-import React,{useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import Container from "./Container";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import LearningCard from "./LearningCard";
 import PersonalInfoCard from "./InfoCard";
 import SectionHeader from "./SectionHeader";
-import { itemVariants } from "@/lib/animations";
+import { childVariants, containerVariants, itemVariants, tabVariants } from "@/lib/animations";
 import SubAboutTitle from "./SubAboutTitle";
 
 const info = [
@@ -55,41 +55,47 @@ const info = [
     value: "First year of Economics of YUDE (paused)",
   },
 ];
+
+const tabData = [
+  { value: "experience", label: "Experience" },
+  { value: "skill", label: "Skills" },
+  { value: "learning", label: "Learning Journey" },
+  { value: "personal", label: "Personal Info" },
+];
+
 const AboutSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref,{once : true, amount : 0.5})
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount : 0.2});
   const controls = useAnimation();
 
-  if (isInView) {
-    controls.start('visible');
-  }
+  useEffect(()=>{ 
+    if (isInView) {
+      controls.start("visible");
+    }
+  },[controls, isInView])
 
   return (
-    <section className="xl:min-h-[100dvh]   3xl:min-h-[800px] mb-24" id="about">
+    <section ref={sectionRef} className="xl:min-h-[100dvh]   3xl:min-h-[800px] mb-24" id="about">
       <Container>
         <div className="xl:px-20 lg:px-10">
           <SectionHeader>About Me</SectionHeader>
           <div>
             <Tabs defaultValue="experience" className="md:grid grid-cols-3">
-              <TabsList className="flex flex-col    gap-3 md:col-span-1">
-                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
-                <TabsTrigger value="experience">Experience</TabsTrigger>
-                </motion.span>
-                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
-                <TabsTrigger value="skill">Skills</TabsTrigger>
-                </motion.span>
-                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
-                <TabsTrigger value="learning">Learning Journey</TabsTrigger>
-                </motion.span>
-                <motion.span className="w-full" ref={ref} animate={controls} initial='hidden' variants={itemVariants}>
-                <TabsTrigger value="personal">Personal Info</TabsTrigger>
-                </motion.span>
-              </TabsList>
+            <motion.div initial="hidden" animate={controls} variants={containerVariants}>
+                <TabsList className="flex flex-col gap-3 md:col-span-1">
+                  {tabData.map((tab, index) => (
+                    <motion.div key={index} className="w-full" variants={tabVariants}>
+                      <TabsTrigger value={tab.value}>{tab.label}</TabsTrigger>
+                    </motion.div>
+                  ))}
+                </TabsList>
+              </motion.div>
+
 
               <div className=" md:col-span-2 font-semibold text-neutral-300">
                 <TabsContent value="experience">
                   <div className="px-5">
-                    <SubAboutTitle title={'Experience'} />
+                    <SubAboutTitle title={"Experience"} />
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <ExperienceCard
                         fromYear={"2023"}
@@ -106,7 +112,10 @@ const AboutSection = () => {
                       />
 
                       <motion.div
-                        ref={ref} animate={controls} initial="hidden" variants={itemVariants}
+                       
+                        animate={controls}
+                        initial="hidden"
+                        variants={itemVariants}
                       >
                         <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-lg mb-5">
                           <CardContent className="p-6 space-y-4">
@@ -148,7 +157,13 @@ const AboutSection = () => {
                                   />
                                 </motion.div>
                               </div>
-                              <motion.div ref={ref} animate={controls} initial="hidden" variants={itemVariants} className="flex-1">
+                              <motion.div
+                               
+                                animate={controls}
+                                initial="hidden"
+                                variants={itemVariants}
+                                className="flex-1"
+                              >
                                 <span className="text-sm font-medium text-blue-400">
                                   2025
                                 </span>
@@ -173,7 +188,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="skill">
                   <div className="px-5">
-                    <SubAboutTitle title={'Skill'} />
+                    <SubAboutTitle title={"Skill"} />
                     <ScrollArea className="h-[600px]  w-full  rounded-md  p-4">
                       <SkillShowcase />
                     </ScrollArea>
@@ -181,8 +196,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="learning">
                   <div className="px-5">
-                  <SubAboutTitle title={'Learning Journey'} />
-
+                    <SubAboutTitle title={"Learning Journey"} />
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <div className="flex flex-col gap-5">
@@ -227,7 +241,7 @@ const AboutSection = () => {
                 </TabsContent>
                 <TabsContent value="personal">
                   <div className="px-5">
-                  <SubAboutTitle title={'Personal Info'} />
+                    <SubAboutTitle title={"Personal Info"} />
 
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <PersonalInfoCard items={info} />

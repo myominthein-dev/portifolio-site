@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect} from 'react'
 import Image from 'next/image'
 import { FaCss3, FaHtml5, FaReact } from 'react-icons/fa'
 import { SiFramer, SiTails, SiTailwindcss } from 'react-icons/si'
@@ -18,10 +18,10 @@ const ProjectCard = ({
   imageSrc
 }) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.5 })
+  const isInView = useInView(ref, { once: true })
   const controls = useAnimation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isInView) {
       controls.start('visible')
     }
@@ -79,24 +79,50 @@ const ProjectCard = ({
 
           <div className='h-[1px] bg-gray-700'></div>
 
-          <div className='flex gap-3'>
-            <motion.a 
-              target='__blank'
-              href={previewLink} 
-              variants={itemVariants} 
-              className='text-sm cursor-pointer font-semibold bg-blue-600 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300'
-            >
-              Preview
-            </motion.a>
-            <motion.a 
-              target='__blank'
-              href={githubLink}
-              variants={itemVariants} 
-              className='text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300'
-            >
-              GitHub
-            </motion.a>
-          </div>
+          <motion.div
+          className="flex gap-3"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+              },
+            },
+          }}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.a
+            target="_blank"
+            href={previewLink}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="text-sm cursor-pointer font-semibold bg-blue-600 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300"
+            rel="noreferrer"
+          >
+            Preview
+          </motion.a>
+          <motion.a
+            target="_blank"
+            href={githubLink}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
+            rel="noreferrer"
+          >
+            GitHub
+          </motion.a>
+          </motion.div>
         </div>
       </div>
 

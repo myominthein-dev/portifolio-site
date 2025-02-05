@@ -105,9 +105,12 @@ const Navbar = () => {
       <div className="bg-slate-950 border-b border-b-black">
         <Container>
           <div className="flex items-center justify-between lg:px-10 xl:px-20 h-16">
-            <Link href="/" className="text-xl font-bold text-neutral-300">
+            <a href="/" onClick={(e) => {
+                        e.preventDefault()
+                        scrollToSection('home')
+                      }}  className="text-xl font-bold text-neutral-300">
               <motion.span variants={itemVariants}>Myo Min Thein</motion.span>
-            </Link>
+            </a>
             <nav className="hidden md:block">
               <ul className="flex space-x-5">
                 {navItems.map((item) => (

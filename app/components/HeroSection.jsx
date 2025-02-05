@@ -1,5 +1,5 @@
 'use client'
-import React,{useRef} from 'react'
+import React,{useRef, useEffect} from 'react'
 import { Spotlight } from './ui/SpotLight'
 import Container from './Container'
 import img from '../../public/profile_2.png'
@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Ellipse from './Ellipse'
 import {motion, useInView, useAnimation} from 'framer-motion'
 import { TextGenerateEffect } from './ui/TextGenerate'
-import { itemVariants } from '@/lib/animations'
+import { childVariants, itemVariants } from '@/lib/animations'
 
 const HeroSection = () => {
 
@@ -15,9 +15,14 @@ const HeroSection = () => {
   const isInView = useInView(ref,{once : true, amount : 0.4})
   const controls = useAnimation();
 
-  if (isInView) {
-    controls.start('visible');
-  }
+  
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible")
+    }
+  }, [isInView, controls])
+
+  
   return (
       <section  id='home' className="xl:min-h-[100dvh] relative lg:flex lg:items-center lg:justify-center  3xl:min-h-[800px] mb-24">
         <div className='absolute z-20 lg:hidden top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.7)]'></div>
@@ -48,20 +53,40 @@ const HeroSection = () => {
               <TextGenerateEffect  textClass={'text-4xl  sm:hidden relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
-              <TextGenerateEffect  textClass={'text-xs sm:text-sm sm:font-thin z-30 relative  text-gray-100 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
+              <TextGenerateEffect  textClass={'text-xs sm:text-sm sm:font-thin z-30 relative  text-gray-200 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
 
-              <div className='flex z-30 relative  sm:justify-center lg:justify-start gap-3 mt-3'>
-                <motion.a href='#projects' initial={{ y : 40, opacity : 0 }}
-                  animate={{ y : 0, opacity : 1 }}
-                  transition={{ duration: 0.1,type: 'spring', once : true,
-                    stiffness: 100,
-                    }} className='text-sm cursor-pointer font-semibold bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300'>Explore projects</motion.a>
-                <motion.button initial={{ y : 40, opacity : 0 }}
-                  animate={{ y : 0, opacity : 1 }}
-                  transition={{ duration: 0.2,type: 'spring', once : true,
-                    stiffness: 100,
-                    delay : 0.1, }}  className='text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300'>Download CV</motion.button>
-              </div>
+              <motion.div
+              className="flex z-30 relative sm:justify-center lg:justify-start gap-3 mt-3"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              <motion.a
+                href="#projects"
+                variants={childVariants}
+                custom={0}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-sm cursor-pointer font-semibold bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition duration-300"
+              >
+                Explore projects
+              </motion.a>
+              <motion.button
+                variants={childVariants}
+                custom={1}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
+              >
+                Download CV
+              </motion.button>
+            </motion.div>
             </div>
              
             <motion.div className='hidden mt-10 lg:block' initial='hidden' ref={ref} animate={controls} variants={itemVariants} >
