@@ -28,9 +28,9 @@ logs/
 *.pid.lock
 
 # dotenv environment files
-.env
-.env.local
-.env.*.local
+#.env
+#.env.local
+#.env.*.local
 
 # Editor-specific files
 .vscode/
