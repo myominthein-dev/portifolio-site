@@ -65,7 +65,7 @@ const AboutSection = () => {
   }
 
   return (
-    <section className="xl:min-h-screen   3xl:min-h-[800px] mb-24" id="about">
+    <section className="xl:min-h-[100dvh]   3xl:min-h-[800px] mb-24" id="about">
       <Container>
         <div className="xl:px-20 lg:px-10">
           <SectionHeader>About Me</SectionHeader>
@@ -106,9 +106,7 @@ const AboutSection = () => {
                       />
 
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        ref={ref} animate={controls} initial="hidden" variants={itemVariants}
                       >
                         <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-lg mb-5">
                           <CardContent className="p-6 space-y-4">

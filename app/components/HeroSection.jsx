@@ -19,14 +19,14 @@ const HeroSection = () => {
     controls.start('visible');
   }
   return (
-      <section  id='home' className="xl:min-h-screen relative lg:flex lg:items-center lg:justify-center  3xl:min-h-[800px] mb-24">
+      <section  id='home' className="xl:min-h-[100dvh] relative lg:flex lg:items-center lg:justify-center  3xl:min-h-[800px] mb-24">
         <div className='absolute z-20 lg:hidden top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.7)]'></div>
 
         <Container  >
            <Spotlight />
            
-           <div className='flex   justify-between mt-20 lg:px-10 xl:px-48'>
-            <div className='flex min-h-screen  text-left sm:text-center lg:text-start sm:min-h-[500px] sm:px-16 lg:px-0 relative justify-center flex-col gap-6 sm:gap-3 pb-24 sm:pb-0  lg:pr-20'>
+           <div className='flex  justify-between mt-20 lg:px-10 xl:px-48'>
+            <div className='flex min-h-[100dvh]  text-left sm:text-center lg:text-start sm:min-h-[500px] sm:px-16 lg:px-0 relative justify-center flex-col gap-4 sm:gap-3 pb-24 sm:pb-0  lg:pr-20'>
             <motion.div className=' absolute z-10 w-[340px] mx-auto left-0 right-0  lg:hidden' initial={{ y : 30, opacity : 0 }}
                   animate={{ y : 0, opacity : 1 }}
                   transition={{ duration: 0.5,type: 'spring', once : true,
@@ -48,7 +48,7 @@ const HeroSection = () => {
               <TextGenerateEffect  textClass={'text-4xl  sm:hidden relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
-              <TextGenerateEffect  textClass={'text-xs sm:text-sm z-30 relative font-thin text-neutral-100 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
+              <TextGenerateEffect  textClass={'text-xs sm:text-sm z-30 relative font-thin text-gray-50 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
 
               <div className='flex z-30 relative  sm:justify-center lg:justify-start gap-3 mt-3'>
                 <motion.a href='#projects' initial={{ y : 40, opacity : 0 }}

@@ -6,7 +6,7 @@ import SectionHeader from './SectionHeader'
 //template_yx97cxe 
 const ContactSection = () => {
   return (
-    <section className='xl:min-h-screen  mb-24 3xl:min-h-[800px]' id='contact'>
+    <section className='xl:min-h-[100vh]  mb-24 3xl:min-h-[800px]' id='contact'>
       <Container>
         <SectionHeader>Get In Touch</SectionHeader>
         <ContactForm/>

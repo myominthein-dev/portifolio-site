@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 
 const IslandMenu = ({isOpen}) => {
   const [activeLink, setActiveLink] = useState('home');
+  
+
   const menuVariants = {
     closed: {
       x: "150%",
@@ -111,6 +113,7 @@ const IslandMenu = ({isOpen}) => {
                 }`}
                 onClick={(e) => {
                   e.preventDefault();
+                  
                   scrollToSection(item.id);
                 }}
               >

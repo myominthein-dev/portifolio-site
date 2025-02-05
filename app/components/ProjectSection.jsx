@@ -62,7 +62,7 @@ const projects = [
 
 const ProjectSection = () => {
   return (
-    <section id='projects' className='xl:min-h-screen   3xl:min-h-[800px] mb-24 '>
+    <section id='projects' className='xl:min-h-[100dvh]   3xl:min-h-[800px] mb-24 '>
         <Container>
           <div className='lg:px-10 xl:px-20'>
             <SectionHeader>Projects</SectionHeader>
