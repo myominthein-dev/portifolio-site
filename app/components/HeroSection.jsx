@@ -77,12 +77,12 @@ const HeroSection = () => {
               >
                 Explore projects
               </motion.a>
-              <motion.a href='/cv.pdf' download={'myo-min-thein_CV.pdf'}
+              <motion.a href='/resume.pdf' download={'myo-min-thein_CV.pdf'}
                 variants={childVariants}
                 custom={1}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
+                className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 sm:hover:bg-blue-500 sm:hover:text-white transition duration-300"
               >
                 Download CV
               </motion.a>

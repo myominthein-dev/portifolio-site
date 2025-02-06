@@ -120,7 +120,7 @@ const ProjectCard = ({
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
+            className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 sm:hover:bg-blue-500 sm:hover:text-white transition duration-300"
             rel="noreferrer"
           >
             GitHub
