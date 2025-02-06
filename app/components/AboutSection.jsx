@@ -81,8 +81,8 @@ const AboutSection = () => {
           <SectionHeader>About Me</SectionHeader>
           <div>
             <Tabs defaultValue="experience" className="md:grid grid-cols-3">
-            <motion.div className="mb-10 sm:mb-0" initial="hidden" animate={controls} variants={containerVariants}>
-                <TabsList className="flex flex-col gap-3 md:col-span-1">
+            <motion.div className="mb-10 sm:mb-0 flex justify-center  " initial="hidden" animate={controls} variants={containerVariants}>
+                <TabsList className="flex  w-full flex-col gap-3 md:col-span-1">
                   {tabData.map((tab, index) => (
                     <motion.div key={index} className="w-full font-poppin" variants={tabVariants}>
                       <TabsTrigger value={tab.value}>{tab.label}</TabsTrigger>

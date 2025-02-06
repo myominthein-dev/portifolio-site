@@ -53,7 +53,7 @@ const HeroSection = () => {
               <TextGenerateEffect className={'sm:hidden font-roboto'} textClass={'text-4xl   relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1 font-roboto'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
-              <TextGenerateEffect className={'font-serif'}  textClass={'text-xs  sm:text-sm sm:font-thin z-30 relative  text-gray-200 lg:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
+              <TextGenerateEffect className={'font-mono'}  textClass={'text-xs  sm:text-sm sm:font-thin z-30 relative  text-gray-400 sm:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
 
               <motion.div
               className="flex z-30 relative sm:justify-center lg:justify-start gap-3 mt-3"
@@ -77,7 +77,7 @@ const HeroSection = () => {
               >
                 Explore projects
               </motion.a>
-              <motion.button
+              <motion.a href='/cv.pdf' download={'myo-min-thein_CV.pdf'}
                 variants={childVariants}
                 custom={1}
                 whileHover={{ scale: 1.05 }}
@@ -85,7 +85,7 @@ const HeroSection = () => {
                 className="text-sm font-semibold border px-4 py-2 rounded-lg border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition duration-300"
               >
                 Download CV
-              </motion.button>
+              </motion.a>
             </motion.div>
             </div>
              
