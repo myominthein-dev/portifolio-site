@@ -98,20 +98,33 @@ const AboutSection = () => {
                     <SubAboutTitle title={"Experience"} />
                     <ScrollArea className="h-[600px] w-full  rounded-md  p-4">
                       <ExperienceCard
-                        fromYear={"2023"}
-                        toYear={"2024"}
+                        fromYear={"27.1.2023"}
+                        toYear={"30.9.2024"}
                         title={
-                          "Sale Operations (Sale, Merchandising, Inventory)"
+                          "Sale Operations"
                         }
                         company={"Sein Hinn Electronics Show Room"}
-                        knowledge={[
-                          "Communication skill improvement",
-                          "POS system end-using",
-                          "Product flow",
+                        duties={[
+                          "Business to consumer sales",
+                          "Product merchandising & display",
+                          "Inventory management"
+                        ]}
+                      />
+                      <ExperienceCard
+                        fromYear={"3.4.2025"}
+                        toYear={"Present"}
+                        title={
+                          "Junior Web Developer"
+                        }
+                        company={"Ikon Mart"}
+                        duties={[
+                          "Code review & testing",
+                          "Develop and maintain E-commerce website"
+
                         ]}
                       />
 
-                      <ExperienceCard checked={false} />
+                      
                     </ScrollArea>
                   </div>
                 </TabsContent>

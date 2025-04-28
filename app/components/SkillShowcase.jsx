@@ -2,9 +2,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CircularProgress } from "../components/ui/AnimatedCircle"
 import { FaBootstrap, FaCss3, FaGitAlt, FaHtml5, FaJs, FaLaravel, FaPhp, FaReact } from "react-icons/fa"
 import { TiTick } from "react-icons/ti";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { RiNextjsFill, RiTailwindCssFill, RiVuejsFill } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
-import { SiFramer } from "react-icons/si";
+import { SiFramer, SiNuxtdotjs } from "react-icons/si";
 import {motion} from 'framer-motion'
 
 const skills = [
@@ -54,6 +54,22 @@ const skills = [
     efficiency: 60,
     description: [
       'Next.js Fundamentals','Layout, Routing','Data fetching, APIs','Styling and UI'
+    ]
+  },
+  {
+    name: "Vue.JS",
+    icon: <RiVuejsFill  className="size-16 text-green-600"/> ,
+    efficiency: 70,
+    description: [
+      'Vue.js Fundamentals','Layout, Routing','Composition APIs','Styling and UI'
+    ]
+  },
+  {
+    name: "Nuxt.JS",
+    icon: <SiNuxtdotjs  className="size-16 text-green-600"/> ,
+    efficiency: 70,
+    description: [
+      'Nuxt.js Fundamentals','Layout, Routing','Data fetching, APIs','Styling and UI'
     ]
   },
   {
