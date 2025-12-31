@@ -10,10 +10,12 @@ export default {
   theme: {
   	extend: {
 		fontFamily: {
-			poppin: ["Poppins", "sans-serif"],
-			roboto: ["Roboto", "sans-serif"],
-			pacifico: ["Pacifico", "sans-serif"],
-		  },
+    poppin: ['var(--font-poppins)', 'sans-serif'],
+    roboto: ['var(--font-roboto)', 'sans-serif'],
+    pacifico: ['var(--font-pacifico)', 'cursive'],
+	geist: ['var(--font-geist-sans)'],
+    mono: ['var(--font-geist-mono)'],
+  },
 		screens : {
 			'3xl' : '1600px',
 			'4xl' : '1800px'

@@ -20,7 +20,7 @@ const info = [
   },
   {
     label: "Age",
-    value: "22",
+    value: new Date().getFullYear() - 2003
   },
   {
     label: "Gender",
@@ -36,7 +36,7 @@ const info = [
   },
   {
     label: "Address",
-    value: "Mingaladon, Yangon (current - Taungoo)",
+    value: "Mingaladon, Yangon",
   },
   {
     label: "Phone",
@@ -101,7 +101,7 @@ const AboutSection = () => {
                         fromYear={"27.1.2023"}
                         toYear={"30.9.2024"}
                         title={
-                          "Sale Operations"
+                          "Sale Operation Staff"
                         }
                         company={"Sein Hinn Electronics Show Room"}
                         duties={[
@@ -114,13 +114,11 @@ const AboutSection = () => {
                         fromYear={"3.4.2025"}
                         toYear={"Present"}
                         title={
-                          "Junior Web Developer"
+                          "Junior Web Developer (Frontend Core & Backend Support)"
                         }
-                        company={"Ikon Mart"}
+                        company={`Ikon Mart ( <a href="https://ikonmart.com" target="_blank" class="text-blue-400 underline">ikonmart.com</a> )`}
                         duties={[
-                          "Code review & testing",
-                          "Develop and maintain E-commerce website"
-
+                          "Successfully shipped an existing vendor-developed eCommerce web application  to production","Fixed bugs, improved performance, and stabilized the application for live users", "Implemented new features and UI improvements based on business requirements"
                         ]}
                       />
 

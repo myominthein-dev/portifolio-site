@@ -1,14 +1,30 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import  localFont  from "next/font/local";
 
-const geistSans = Geist({
+const poppins = localFont({
+  src: "../public/fonts/poppins/Poppins-Regular.ttf",
+  variable: "--font-poppins",
+})
+
+const pacifico = localFont({
+  src: "../public/fonts/pacifico/Pacifico-Regular.ttf",
+  variable: "--font-pacifico",
+})
+
+const roboto = localFont({
+  src: "../public/fonts/roboto/static/Roboto-Regular.ttf",
+  variable: "--font-roboto",
+})
+
+
+const geistSans = localFont({
+  src: "../public/fonts/geist/sans/Geist-Regular.woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "../public/fonts/geist/mono/GeistMono-Thin.woff2",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -20,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable}  ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${pacifico.variable} ${roboto.variable} ${geistMono.variable} ${geistSans.variable}`}
       >
         {children}
       </body>

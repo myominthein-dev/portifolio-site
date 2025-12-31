@@ -2,11 +2,12 @@ import React from "react";
 import Container from "./Container";
 import SectionHeader from "./SectionHeader";
 import ProjectCard from "./ProjectCard";
-import { FaCss3, FaHtml5, FaReact } from "react-icons/fa";
-import { SiFramer, SiTailwindcss } from "react-icons/si";
+import { FaCss3, FaHtml5, FaReact, FaVuejs } from "react-icons/fa";
+import { SiFramer, SiSupabase, SiTailwindcss } from "react-icons/si";
 import kidGarden from "../assets/kid-garden_preview.jpg";
 import estatela from "../assets/estatela_preview.jpg";
 import ecommerce from "../assets/ecommerce_preview.png";
+import expenseTracker from "../assets/expense_tracker.png"
 import illustration from "../assets/illustration_preview.jpg";
 
 const techIcons = [
@@ -29,14 +30,14 @@ const projects = [
     details: {
       projectDetails: [
         `This is a real-estate demonstration website with static contents and first
-project of MMS IT remote-workshop program.`,
+         project of MMS IT remote-workshop program.`,
         `We practiced team-git flow, page routing and animations.`,
         `We used React.js, TailwindCss and Framer motion.`,
       ],
       contributions: [
         `Github Host ( Codebase handling, merging and conflicts resolving )`,
         `Header component, Testimonial section, Terms and Condition page and
-FAQs page.`,
+        FAQs page.`,
         `Deployment to netlify platform.`,
       ],
     },
@@ -110,6 +111,31 @@ boxes.`,
         `I practiced layout, page routing and animations .`,
         `I used React.js, TailwindCss, Zustand and AOS.`,
         `I deployed to vercel platform.`,
+      ],
+    },
+  },
+  {
+    id: 5,
+    title: "Expense Tracker",
+    subtitle: "Vue + Supabase project",
+    description:
+      "This is a full-featured expense tracker using Vue.js and Supabase that allows users to manage their expenses.",
+    image: expenseTracker,
+    technologies: [
+    <FaHtml5 className="text-red-500 size-6" />,
+    <FaVuejs className="text-sky-500 size-6" />,
+    <SiTailwindcss className="text-blue-400 size-6" />,
+    <SiSupabase className="text-green-400 size-6" />,
+
+  ],
+    previewLink: "https://track-ur-expense.vercel.app",
+    githubLink: "https://github.com/myominthein-dev/expense-tracker",
+    details: {
+      projectDetails: [
+        `Create and manage personal accounts securely.`,
+        `Log expenses with amount and reason.`,
+        `Review expense history with customizable date ranges.`,
+        `Clear outdated or missed records by selecting a specific date.`,
       ],
     },
   },

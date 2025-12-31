@@ -204,7 +204,7 @@ const ProjectCard = ({
                 X
               </motion.button>
             </div>
-            <Description>
+            <Description as="div">
               <div>
                 <motion.h3
                   initial={{ opacity: 0, x: -20 }}
@@ -255,7 +255,9 @@ const ProjectCard = ({
                   ))}
                 </ul>
               </div>
-              <div>
+              {
+                contributions.length > 0 && (
+                  <div>
                 <motion.h3
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -305,6 +307,8 @@ const ProjectCard = ({
                   ))}
                 </ul>
               </div>
+                )
+              }
               <div className="h-[1px] my-4 bg-gray-700"></div>
 
               <motion.div className="flex gap-3">

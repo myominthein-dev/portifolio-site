@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  profile-app:
+    build: .
+    expose:
+      - "3000"
+    container_name: profile
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-alpine
+    ports: 
+      - "3000:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - profile-app

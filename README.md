@@ -12,6 +12,6 @@ Welcome to my page! I’m a well-trained, adaptive, and enthusiastic web develop
 
 
 
-## Project Link
+## Profile Link
 
-[Visit the Project Website](https://myominthein-dev.github.io)
+[Visit the Profile Website](https://myo-min-thein.vercel.app)

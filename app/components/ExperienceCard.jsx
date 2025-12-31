@@ -81,9 +81,9 @@ export default function ExperienceCard({
               <h4 className="text-xs lg:text-sm font-medium text-gray-400">
                 Company:
               </h4>
-              <motion.p initial={{ opacity: 0, x: -20 }}
+              <motion.p dangerouslySetInnerHTML={{ __html : company }} initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }} className="text-sm  font-robotolg:text-lg text-gray-200">{company}</motion.p>
+        transition={{ duration: 0.5 }} className="text-sm  font-robotolg:text-lg text-gray-200"></motion.p>
             </div>
             <div className="space-y-2 ml-10">
               <h4 className="text-sm font-medium text-gray-400">Duties :</h4>

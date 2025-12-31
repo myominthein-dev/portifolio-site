@@ -1,0 +1,5 @@
+This docker command run selected compose.yml file separated for dev and prod
+- docker compose -f docker-compose.yml -f docker-compose.dev.yml up  --build -d 
+
+This docker command is original and work for prod
+- docker compose up --build -d

@@ -53,7 +53,7 @@ const HeroSection = () => {
               <TextGenerateEffect className={'sm:hidden font-roboto'} textClass={'text-4xl   relative z-30 font-bold text-neutral-300'} words={`I'm Myo Min Thein`}/>
               <TextGenerateEffect className={'my-1 font-roboto'} textClass={'text-2xl relative z-30 font-bold !text-blue-300'} words={`Web Developer`}/>
 
-              <TextGenerateEffect className={'font-mono'}  textClass={'text-xs  sm:text-sm sm:font-thin z-30 relative  text-gray-400 sm:!text-neutral-300'} words={`A passionate entry-level Web Developer with a strong foundation in JavaScript and PHP. Skilled in Vanilla JS, pure PHP, and frameworks like React.js, Next.js, Laravel, Bootstrap and Tailwind CSS. Experienced with animation libraries such as Framer Motion, Next UI, Aceternity UI and so on. Quick learner, adaptable, and thrives in collaborative environments.`}/>
+              <TextGenerateEffect className={'font-mono'}  textClass={'text-xs  sm:text-sm sm:font-thin z-30 relative  text-gray-300 sm:!text-neutral-300'} words={`A passionate Junior Full-Stack Web Developer with real-world experience in E-commerce ( ikonmart.com ) and production-level POS systems training. Skilled in Vanilla JavaScript, pure PHP, and modern frameworks like React.js, Vue.js, and Laravel, along with UI libraries such as Bootstrap and Tailwind CSS. Experienced with Framer Motion, NextUI, Aceternity UI, Nuxt UI, PrimeVue, and more. A quick learner, highly adaptable, and thrives in collaborative environments.`}/>
 
               <motion.div
               className="flex z-30 relative sm:justify-center lg:justify-start gap-3 mt-3"

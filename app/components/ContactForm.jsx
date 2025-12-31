@@ -46,8 +46,9 @@ export default function ContactSection() {
       reset()
     } catch (error) {
       console.error("Error sending email:", error)
+    } finally {
+      setIsSubmitting(false)
     }
-    setIsSubmitting(false)
   }
 
   return (
