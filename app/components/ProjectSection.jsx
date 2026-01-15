@@ -19,6 +19,31 @@ const techIcons = [
 const projects = [
   {
     id: 1,
+    title: "Expense Tracker",
+    subtitle: "Vue + Supabase project",
+    description:
+      "This is a full-featured expense tracker using Vue.js and Supabase that allows users to manage their expenses.",
+    image: expenseTracker,
+    technologies: [
+    <FaHtml5 className="text-red-500 size-6" />,
+    <FaVuejs className="text-sky-500 size-6" />,
+    <SiTailwindcss className="text-blue-400 size-6" />,
+    <SiSupabase className="text-green-400 size-6" />,
+
+  ],
+    previewLink: "https://track-ur-expense.vercel.app",
+    githubLink: "https://github.com/myominthein-dev/expense-tracker",
+    details: {
+      projectDetails: [
+        `Create and manage personal accounts securely.`,
+        `Log expenses with amount and reason.`,
+        `Review expense history with customizable date ranges.`,
+        `Clear outdated or missed records by selecting a specific date.`,
+      ],
+    },
+  },
+  {
+    id: 2,
     title: "Estatela",
     subtitle: "Front-End project",
     description:
@@ -43,7 +68,7 @@ const projects = [
     },
   },
   {
-    id: 2,
+    id: 3,
     title: "Tinyverse",
     subtitle: "Front-End project",
     description:
@@ -70,7 +95,7 @@ Animations`,
     },
   },
   {
-    id: 3,
+    id: 4,
     title: "3D Illustration",
     subtitle: "Front-End project",
     description:
@@ -95,50 +120,26 @@ boxes.`,
       ],
     },
   },
-  {
-    id: 4,
-    title: "Ecommerce",
-    subtitle: "Front-End project",
-    description:
-      "This project is for practicing JS DOM manipulations and user-interactions.",
-    image: ecommerce,
-    technologies: techIcons,
-    previewLink: "https://react-ecommerce-app-vincent.vercel.app",
-    githubLink: "https://github.com/myominthein-dev/react-ecommerce-app",
-    details: {
-      projectDetails: [
-        `This is a practical project for React-DOM and global state management.`,
-        `I practiced layout, page routing and animations .`,
-        `I used React.js, TailwindCss, Zustand and AOS.`,
-        `I deployed to vercel platform.`,
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: "Expense Tracker",
-    subtitle: "Vue + Supabase project",
-    description:
-      "This is a full-featured expense tracker using Vue.js and Supabase that allows users to manage their expenses.",
-    image: expenseTracker,
-    technologies: [
-    <FaHtml5 className="text-red-500 size-6" />,
-    <FaVuejs className="text-sky-500 size-6" />,
-    <SiTailwindcss className="text-blue-400 size-6" />,
-    <SiSupabase className="text-green-400 size-6" />,
-
-  ],
-    previewLink: "https://track-ur-expense.vercel.app",
-    githubLink: "https://github.com/myominthein-dev/expense-tracker",
-    details: {
-      projectDetails: [
-        `Create and manage personal accounts securely.`,
-        `Log expenses with amount and reason.`,
-        `Review expense history with customizable date ranges.`,
-        `Clear outdated or missed records by selecting a specific date.`,
-      ],
-    },
-  },
+  // {
+  //   id: 5,
+  //   title: "Ecommerce",
+  //   subtitle: "Front-End project",
+  //   description:
+  //     "This project is for practicing JS DOM manipulations and user-interactions.",
+  //   image: ecommerce,
+  //   technologies: techIcons,
+  //   previewLink: "https://react-ecommerce-app-vincent.vercel.app",
+  //   githubLink: "https://github.com/myominthein-dev/react-ecommerce-app",
+  //   details: {
+  //     projectDetails: [
+  //       `This is a practical project for React-DOM and global state management.`,
+  //       `I practiced layout, page routing and animations .`,
+  //       `I used React.js, TailwindCss, Zustand and AOS.`,
+  //       `I deployed to vercel platform.`,
+  //     ],
+  //   },
+  // },
+  
 ];
 
 const ProjectSection = () => {
