@@ -2,14 +2,14 @@ import React from "react";
 import Container from "./Container";
 import SectionHeader from "./SectionHeader";
 import ProjectCard from "./ProjectCard";
-import { FaCss3, FaHtml5, FaReact, FaVuejs } from "react-icons/fa";
-import { SiFramer, SiSupabase, SiTailwindcss } from "react-icons/si";
+import { FaCss3, FaHtml5, FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
+import { SiFramer, SiNuxtdotjs, SiSupabase, SiTailwindcss } from "react-icons/si";
 import kidGarden from "../assets/kid-garden_preview.jpg";
 import estatela from "../assets/estatela_preview.jpg";
 import ecommerce from "../assets/ecommerce_preview.png";
 import expenseTracker from "../assets/expense_tracker.png"
 import illustration from "../assets/illustration_preview.jpg";
-
+import ikonmart from "../assets/ikonmart.png"
 const techIcons = [
   <FaHtml5 className="text-red-500 size-6" />,
   <FaReact className="text-sky-500 size-6" />,
@@ -17,8 +17,37 @@ const techIcons = [
 ];
 
 const projects = [
-  {
+   {
     id: 1,
+    title: "Ikonmart",
+    subtitle: "Nuxt.js + Laravel",
+    description:
+      "This is a full-featured e-commerce platform built with Nuxt.js and Laravel.",
+    image: ikonmart,
+    technologies: [
+    <FaHtml5 className="text-red-500 size-6" />,
+    <SiNuxtdotjs className="text-sky-500 size-6" />,
+    <SiTailwindcss className="text-blue-400 size-6" />,
+    <FaLaravel className="text-green-400 size-6" />,
+
+  ],
+    previewLink: "https://ikonmart.com",
+    githubLink: "https://github.com/myominthein-dev",
+    details: {
+      projectDetails: [
+        `Featurich eCommerce platform for buying and selling products online.`,
+        `Advanced product viewing capabilities, order and payment system.`,
+        `Subscribe membership feature and get benefits.`,
+      ],
+      contributions: [
+        `Successfully shipped an existing vendor-developed eCommerce web application to production.`,
+        ` Fixed bugs, improved performance, and stabilized the application for live users.`,
+        `Implemented new features and UI improvements based on business requirements.`,
+      ],
+    },
+  },
+  {
+    id: 2,
     title: "Expense Tracker",
     subtitle: "Vue + Supabase project",
     description:
@@ -42,8 +71,9 @@ const projects = [
       ],
     },
   },
+ 
   {
-    id: 2,
+    id: 3,
     title: "Estatela",
     subtitle: "Front-End project",
     description:
@@ -68,7 +98,7 @@ const projects = [
     },
   },
   {
-    id: 3,
+    id: 4,
     title: "Tinyverse",
     subtitle: "Front-End project",
     description:
@@ -95,7 +125,7 @@ Animations`,
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "3D Illustration",
     subtitle: "Front-End project",
     description:
