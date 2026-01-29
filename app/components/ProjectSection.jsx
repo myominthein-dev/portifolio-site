@@ -10,6 +10,8 @@ import ecommerce from "../assets/ecommerce_preview.png";
 import expenseTracker from "../assets/expense_tracker.png"
 import illustration from "../assets/illustration_preview.jpg";
 import ikonmart from "../assets/ikonmart.png"
+import dashboard from "../assets/next_dashboard.png"
+import { RiNextjsLine } from "react-icons/ri";
 const techIcons = [
   <FaHtml5 className="text-red-500 size-6" />,
   <FaReact className="text-sky-500 size-6" />,
@@ -72,8 +74,32 @@ const projects = [
     },
   },
  
-  {
+   {
     id: 3,
+    title: "CRUD Dashboard",
+    subtitle: "Nuxt + Supabase project",
+    description:
+      "This is a practical mini-project for CRUD operations using Nuxt.js and Supabase.",
+    image: dashboard,
+    technologies: [
+    <FaHtml5 className="text-red-500 size-6" />,
+    <RiNextjsLine className="text-sky-500 size-6" />,
+    <SiTailwindcss className="text-blue-400 size-6" />,
+    <SiSupabase className="text-green-400 size-6" />,
+
+  ],
+    previewLink: "https://https://next-dashboard-mm.vercel.app/",
+    githubLink: "https://github.com/myominthein-dev/next-doc-project",
+    details: {
+      projectDetails: [
+        `Learnt about next.js app router provided in next.js document.`,
+        `Implement CRUD operations with Supabase as backend.`,
+        `Auth system, lazy loading with suspense and crud of invoices.`
+      ],
+    },
+  },
+  {
+    id: 4,
     title: "Estatela",
     subtitle: "Front-End project",
     description:
@@ -98,7 +124,7 @@ const projects = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "Tinyverse",
     subtitle: "Front-End project",
     description:
@@ -125,7 +151,7 @@ Animations`,
     },
   },
   {
-    id: 5,
+    id: 6,
     title: "3D Illustration",
     subtitle: "Front-End project",
     description:
