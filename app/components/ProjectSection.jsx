@@ -88,7 +88,7 @@ const projects = [
     <SiSupabase className="text-green-400 size-6" />,
 
   ],
-    previewLink: "https://https://next-dashboard-mm.vercel.app/",
+    previewLink: "https://next-dashboard-mm.vercel.app/",
     githubLink: "https://github.com/myominthein-dev/next-doc-project",
     details: {
       projectDetails: [
