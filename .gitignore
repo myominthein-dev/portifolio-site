@@ -10,8 +10,8 @@ pnpm-debug.log*
 out/
 
 # Tailwind CSS
-tailwind.config.js
-postcss.config.js
+tailwind.config.mjs
+#postcss.config.js
 
 # Build files
 dist/
