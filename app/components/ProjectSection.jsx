@@ -51,7 +51,7 @@ const projects = [
   {
     id: 2,
     title: "Expense Tracker",
-    subtitle: "Vue + Supabase project",
+    subtitle: "Vue.js + Supabase project",
     description:
       "This is a full-featured expense tracker using Vue.js and Supabase that allows users to manage their expenses.",
     image: expenseTracker,
@@ -77,9 +77,9 @@ const projects = [
    {
     id: 3,
     title: "CRUD Dashboard",
-    subtitle: "Nuxt + Supabase project",
+    subtitle: "Next.js + Supabase project",
     description:
-      "This is a practical mini-project for CRUD operations using Nuxt.js and Supabase.",
+      "This is a practical mini-project for CRUD operations using Next.js and Supabase.",
     image: dashboard,
     technologies: [
     <FaHtml5 className="text-red-500 size-6" />,
@@ -101,7 +101,7 @@ const projects = [
   {
     id: 4,
     title: "Estatela",
-    subtitle: "Front-End project",
+    subtitle: "Front-End project (React.js)",
     description:
       "This is about of a static real-estate page and group-project of MMS Connection program.",
     image: estatela,
@@ -126,7 +126,7 @@ const projects = [
   {
     id: 5,
     title: "Tinyverse",
-    subtitle: "Front-End project",
+    subtitle: "Front-End project (React.js)",
     description:
       "This is about of a pre-school profile page and group-project of MMS Connection program.",
     image: kidGarden,
@@ -153,7 +153,7 @@ Animations`,
   {
     id: 6,
     title: "3D Illustration",
-    subtitle: "Front-End project",
+    subtitle: "Front-End project (React.js)",
     description:
       "This is first project of our team for collaboration-improvement, practicing layout and animations.",
     image: illustration,
